@@ -3,32 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rasa-UI</title>
+    <title>Scholarship Assistant Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-weight: 500;
+        }
+        .subtitle {
+            margin-top: 5px;
+            font-weight: 300;
+        }
+        .content {
+            display: flex;
+            margin-top: 30px;
+        }
+        .info-panel {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-right: 20px;
+        }
+        .chat-container {
+            flex: 1;
+            height: 600px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .features {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .feature-card {
+            width: 30%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .feature-title {
+            color: #1e88e5;
+            margin-top: 0;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .info-panel {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .feature-card {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Rasa-UI</h1><hr>
+    <header>
+        <div class="container">
+            <h1>Scholarship Assistant</h1>
+            <p class="subtitle">Find and apply for scholarships and government schemes with ease</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <div class="info-panel">
+                <h2>How I Can Help You</h2>
+                <p>I'm your AI scholarship assistant designed to help students and parents navigate the complex world of scholarships and government schemes.</p>
+                <h3>Try asking me:</h3>
+                <ul>
+                    <li>"Show me available scholarships"</li>
+                    <li>"Am I eligible for INSPIRE scholarship?"</li>
+                    <li>"What documents do I need for Post-Matric scholarship?"</li>
+                    <li>"When is the deadline for National Scholarship Portal?"</li>
+                    <li>"Remind me about KVPY deadline"</li>
+                </ul>
+                <h3>Popular Scholarships</h3>
+                <ul>
+                    <li>National Scholarship Portal</li>
+                    <li>INSPIRE Scholarship</li>
+                    <li>Post-Matric Scholarship</li>
+                    <li>Merit-cum-Means Scholarship</li>
+                    <li>Prime Minister's Scholarship Scheme</li>
+                </ul>
+            </div>
+            
+            <div class="chat-container" id="chat-container">
+                <!-- Rasa Webchat will be loaded here -->
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3 class="feature-title">Personalized Recommendations</h3>
+                <p>Get scholarship recommendations tailored to your profile, including education level, income, category, and academic performance.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Eligibility Check</h3>
+                <p>Quickly check if you're eligible for specific scholarships without going through complex documentation.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Document Guide</h3>
+                <p>Get a complete list of documents required for any scholarship application.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Deadline Reminders</h3>
+                <p>Set reminders for important scholarship deadlines so you never miss an opportunity.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Application Process</h3>
+                <p>Get step-by-step guidance on how to apply for scholarships and government schemes.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">24/7 Assistance</h3>
+                <p>Get help anytime with your scholarship and financial aid questions.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Scholarship Assistant Bot | Helping students access education funding opportunities</p>
+        </div>
+    </footer>
+
     <script>!(function () {
-  let e = document.createElement("script"),
-    t = document.head || document.getElementsByTagName("head")[0];
-  (e.src =
-    "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
-    // Replace 1.x.x with the version that you want
-    (e.async = !0),
-    (e.onload = () => {
-      window.WebChat.default(
-        {
-          title : "Disha",
-          initPayload: "/greet",
-          customData: { language: "en" },
-          socketUrl: "http://localhost:5005/",
-          // add other props here
-        },
-        null
-      );
-    }),
-    t.insertBefore(e, t.firstChild);
-})();
-localStorage.clear();
-</script>
+        let e = document.createElement("script"),
+            t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+            "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+            (e.async = !0),
+            (e.onload = () => {
+                window.WebChat.default(
+                    {
+                        title: "Scholarship Assistant",
+                        subtitle: "Find and apply for scholarships",
+                        initPayload: "/greet",
+                        customData: { language: "en" },
+                        socketUrl: "http://localhost:5005/",
+                        socketPath: "/socket.io/",
+                        profileAvatar: "https://i.imgur.com/nGF1K8f.jpg",
+                        openLauncherImage: "https://i.imgur.com/nGF1K8f.jpg",
+                        closeLauncherImage: "https://i.imgur.com/nGF1K8f.jpg",
+                        params: {
+                            storage: "session",
+                            userId: "scholarship-user-" + Math.random().toString(36).substring(7),
+                        },
+                        showMessageDate: true,
+                        customMessageDelay: (message) => {
+                            // Calculate delay based on message length
+                            const delay = message.length * 30;
+                            return Math.min(Math.max(delay, 500), 3000);
+                        }
+                    },
+                    null
+                );
+            }),
+            t.insertBefore(e, t.firstChild);
+    })();
+    localStorage.clear();
+    </script>
 </body>
 </html>

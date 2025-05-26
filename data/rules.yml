@@ -1,6 +1,44 @@
 version: "3.1"
 
 rules:
+- rule: Respond to scholarship inquiry anytime
+  steps:
+  - intent: search_scholarship
+  - action: action_collect_user_info
+  - action: action_search_scholarships
+  - action: action_listen
+
+- rule: Check eligibility anytime
+  steps:
+  - intent: eligibility_check
+  - action: action_check_eligibility
+  - action: action_listen
+
+- rule: Get document requirements anytime
+  steps:
+  - intent: document_requirements
+  - action: action_get_documents
+  - action: action_listen
+
+- rule: Get application deadline anytime
+  steps:
+  - intent: application_deadline
+  - action: action_get_deadline
+  - action: action_listen
+
+- rule: Set reminder anytime
+  steps:
+  - intent: set_reminder
+  - action: action_set_reminder
+  - action: utter_reminder_set  # Added this line to match the story
+  - action: action_listen
+
+- rule: Collect user info when profile information provided
+  steps:
+  - intent: provide_user_info
+  - action: action_collect_user_info
+  - action: action_recommend_schemes  # Added this line to match the story
+  - action: action_listen
 
 - rule: Say goodbye anytime the user says goodbye
   steps:

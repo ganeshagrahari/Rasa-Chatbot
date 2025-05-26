@@ -9,6 +9,70 @@ intents:
   - mood_unhappy
   - bot_challenge
   - bot_info
+  - search_scholarship
+  - eligibility_check
+  - document_requirements
+  - application_deadline
+  - set_reminder
+  - provide_user_info
+
+entities:
+  - scheme_name
+  - education_level
+  - income_level
+  - category
+  - state
+  - field
+  - score
+
+slots:
+  scheme_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: scheme_name
+  education_level:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: education_level
+  income_level:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: income_level
+  category:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: category
+  state:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: state
+  field:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: field
+  score:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: score
+  user_profile_complete:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
 
 responses:
   utter_greet:
@@ -37,6 +101,40 @@ responses:
         payload: "/goodbye"
       - title: "Articles"
         payload: "/goodbye"
+
+  utter_ask_education_level:
+  - text: "What is your current education level? (e.g., 10th, 12th, undergraduate, graduate)"
+
+  utter_ask_income_level:
+  - text: "What is your annual family income range? (e.g., below 2 lakhs, 2-5 lakhs, 5-8 lakhs, above 8 lakhs)"
+
+  utter_ask_category:
+  - text: "Which category do you belong to? (e.g., General, OBC, SC, ST, Minority)"
+
+  utter_ask_state:
+  - text: "Which state are you from?"
+
+  utter_ask_field:
+  - text: "What is your field of study? (e.g., Engineering, Medical, Arts, Commerce, Science)"
+
+  utter_ask_score:
+  - text: "What is your academic score/percentage in your last examination?"
+
+  utter_profile_complete:
+  - text: "Great! I now have your profile details. I can help you find suitable scholarships and schemes."
+
+  utter_reminder_set:
+  - text: "I've set up a reminder for you. I'll notify you before the deadline."
+  - text: "Your reminder has been set. You'll receive notifications as the deadline approaches."
+
+actions:
+  - action_search_scholarships
+  - action_check_eligibility
+  - action_get_documents
+  - action_get_deadline
+  - action_set_reminder
+  - action_collect_user_info
+  - action_recommend_schemes
 
 session_config:
   session_expiration_time: 60

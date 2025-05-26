@@ -34,3 +34,46 @@ stories:
   - action: utter_goodbye
   - intent: bot_info
   - action: utter_bot_info
+
+- story: scholarship search flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search_scholarship
+  - action: action_collect_user_info
+  - action: action_search_scholarships
+
+- story: eligibility check flow
+  steps:
+  - intent: eligibility_check
+  - slot_was_set:
+    - scheme_name: "PMRF"
+  - action: action_check_eligibility
+
+- story: document requirements flow
+  steps:
+  - intent: document_requirements
+  - slot_was_set:
+    - scheme_name: "National Scholarship Portal"
+  - action: action_get_documents
+
+- story: deadline inquiry flow
+  steps:
+  - intent: application_deadline
+  - slot_was_set:
+    - scheme_name: "INSPIRE scholarship"
+  - action: action_get_deadline
+
+- story: set reminder flow
+  steps:
+  - intent: set_reminder
+  - slot_was_set:
+    - scheme_name: "KVPY"
+  - action: action_set_reminder
+  - action: utter_reminder_set
+
+- story: user provides profile information
+  steps:
+  - intent: provide_user_info
+  - action: action_collect_user_info
+  - action: action_recommend_schemes

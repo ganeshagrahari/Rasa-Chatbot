@@ -96,3 +96,65 @@ nlu:
     - Learn code
     - who are you
     - i need a help
+
+- intent: search_scholarship
+  examples: |
+    - I want to find a scholarship
+    - Show me available scholarships
+    - What scholarships can I apply for?
+    - Help me find financial aid
+    - Scholarship opportunities
+    - Government schemes for students
+    - Educational funding options
+
+- intent: eligibility_check
+  examples: |
+    - Am I eligible for [PMRF](scheme_name)?
+    - Can I apply for [National Scholarship Portal](scheme_name)?
+    - Do I qualify for [post-matric scholarship](scheme_name)?
+    - Check my eligibility for [merit-cum-means scholarship](scheme_name)
+    - Eligibility criteria for [Pragati Scholarship](scheme_name)
+    - Who can apply for [CSIR fellowship](scheme_name)?
+
+- intent: document_requirements
+  examples: |
+    - What documents do I need for [GATE scholarship](scheme_name)?
+    - Documents required for [Vidyalakshmi](scheme_name)
+    - Papers needed for [minority scholarship](scheme_name) application
+    - What should I upload for [AICTE scholarship](scheme_name)?
+    - Required certificates for [merit scholarship](scheme_name)
+
+- intent: application_deadline
+  examples: |
+    - When is the last date to apply for [KVPY](scheme_name)?
+    - Deadline for [UGC scholarship](scheme_name)
+    - Last date of [prime minister scholarship](scheme_name) submission
+    - Application timeline for [INSPIRE scholarship](scheme_name)
+    - When does [Central Sector Scheme](scheme_name) application close?
+
+- intent: set_reminder
+  examples: |
+    - Remind me about [INSPIRE](scheme_name) deadline
+    - Set a notification for [UGC](scheme_name) application
+    - Alert me before [GATE scholarship](scheme_name) closes
+    - I want reminders for [minority scholarship](scheme_name)
+    - Send me updates about [merit scholarship](scheme_name)
+
+- intent: provide_user_info
+  examples: |
+    - I am a [graduate](education_level) student
+    - I'm studying in [12th standard](education_level)
+    - My family income is [below 2 lakhs](income_level)
+    - I belong to [SC](category) category
+    - I'm from [Karnataka](state)
+    - I'm studying [Engineering](field)
+    - My percentage is [85](score)
+
+entities:
+  - scheme_name
+  - education_level
+  - income_level
+  - category
+  - state
+  - field
+  - score
